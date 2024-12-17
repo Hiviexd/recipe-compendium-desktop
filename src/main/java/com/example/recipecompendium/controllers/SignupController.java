@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
 
 public class SignupController {
     @FXML private TextField usernameField;
@@ -20,6 +22,9 @@ public class SignupController {
     @FXML private PasswordField confirmPasswordField;
 
     private final UserService userService = new UserService();
+    
+    private final BiFunction<String, String, Boolean> passwordsMatch = (pass, confirm) ->
+        pass != null && pass.equals(confirm);
 
     @FXML
     protected void handleSignup() {
@@ -27,22 +32,40 @@ public class SignupController {
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
+        // Check empty fields
         if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             DialogUtils.showError.accept("Signup Error", "Please fill in all fields");
             return;
         }
 
-        if (!password.equals(confirmPassword)) {
+        // Check password match
+        if (!passwordsMatch.apply(password, confirmPassword)) {
             DialogUtils.showError.accept("Signup Error", "Passwords do not match");
             return;
         }
 
         try {
+            // Check username format
+            if (!userService.isValidUsername.test(username)) {
+                DialogUtils.showError.accept("Signup Error", 
+                    "Username must be between 3 and 30 characters long");
+                return;
+            }
+
+            // Check password format
+            if (!userService.isValidPassword.test(password)) {
+                DialogUtils.showError.accept("Signup Error", 
+                    "Password must be at least 6 characters long");
+                return;
+            }
+
+            // Check if username exists
             if (userService.usernameExists(username)) {
                 DialogUtils.showError.accept("Signup Error", "Username already exists");
                 return;
             }
 
+            // Create user
             User user = userService.createUser(username, password);
             if (user != null) {
                 loadMainView(user);

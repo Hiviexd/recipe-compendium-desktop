@@ -26,11 +26,11 @@ public class UserService {
         }
     };
 
-    private final Predicate<String> isValidUsername = username -> username != null && username.length() >= 3
+    public final Predicate<String> isValidUsername = username -> username != null && username.length() >= 3
             && username.length() <= 30;
 
     // TODO: change password length to 6
-    private final Predicate<String> isValidPassword = password -> password != null && password.length() >= 1;
+    public final Predicate<String> isValidPassword = password -> password != null && password.length() >= 1;
 
     public User authenticateUser(String username, String password) throws SQLException {
         if (!isValidUsername.test(username) || !isValidPassword.test(password)) {

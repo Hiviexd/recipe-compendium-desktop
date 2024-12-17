@@ -31,6 +31,20 @@ public class LoginController {
         }
 
         try {
+            // Check username format
+            if (!userService.isValidUsername.test(username)) {
+                DialogUtils.showError.accept("Signup Error",
+                        "Username must be between 3 and 30 characters long");
+                return;
+            }
+
+            // Check password format
+            if (!userService.isValidPassword.test(password)) {
+                DialogUtils.showError.accept("Signup Error",
+                        "Password must be at least 6 characters long");
+                return;
+            }
+
             User user = userService.authenticateUser(username, password);
             if (user != null) {
                 loadMainView(user);
