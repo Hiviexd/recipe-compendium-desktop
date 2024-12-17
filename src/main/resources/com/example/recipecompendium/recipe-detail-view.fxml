@@ -6,56 +6,62 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.recipecompendium.controllers.RecipeDetailController"
       stylesheets="@styles.css"
-      spacing="20"
       prefWidth="600"
-      prefHeight="800">
+      prefHeight="600">
     
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
-    
-    <StackPane alignment="CENTER">
-        <ImageView fx:id="recipeImage" fitHeight="300" fitWidth="600" preserveRatio="true"/>
-    </StackPane>
-    
-    <HBox spacing="10" alignment="CENTER_LEFT">
-        <Text fx:id="titleText" styleClass="recipe-detail-title"/>
-        <Region HBox.hgrow="ALWAYS"/>
-    </HBox>
-    
-    <VBox spacing="5">
-        <Text fx:id="cuisineText" styleClass="recipe-detail-cuisine"/>
-        <Text fx:id="creatorText" styleClass="recipe-detail-cuisine"/>
-    </VBox>
-    
-    <VBox spacing="10">
-        <Text styleClass="recipe-detail-section" text="Description"/>
-        <TextFlow>
-            <Text fx:id="descriptionText" styleClass="recipe-detail-text"/>
-        </TextFlow>
-    </VBox>
-    
-    <VBox spacing="10">
-        <Text styleClass="recipe-detail-section" text="Ingredients"/>
-        <TextFlow>
-            <Text fx:id="ingredientsText" styleClass="recipe-detail-text"/>
-        </TextFlow>
-    </VBox>
-    
-    <VBox spacing="10">
-        <Text styleClass="recipe-detail-section" text="Steps"/>
-        <TextFlow>
-            <Text fx:id="stepsText" styleClass="recipe-detail-text"/>
-        </TextFlow>
-    </VBox>
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <StackPane alignment="CENTER">
+                <ImageView fx:id="recipeImage" fitHeight="300" fitWidth="600" preserveRatio="true"/>
+            </StackPane>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Text fx:id="titleText" styleClass="recipe-detail-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+            
+            <VBox spacing="5">
+                <Text fx:id="cuisineText" styleClass="recipe-detail-cuisine"/>
+                <Text fx:id="creatorText" styleClass="recipe-detail-cuisine"/>
+            </VBox>
+            
+            <Separator/>
+            
+            <VBox spacing="10">
+                <Text styleClass="recipe-detail-section" text="Description"/>
+                <TextFlow>
+                    <Text fx:id="descriptionText" styleClass="recipe-detail-text"/>
+                </TextFlow>
+            </VBox>
+            
+            <VBox spacing="10">
+                <Text styleClass="recipe-detail-section" text="Ingredients"/>
+                <TextFlow>
+                    <Text fx:id="ingredientsText" styleClass="recipe-detail-text"/>
+                </TextFlow>
+            </VBox>
+            
+            <VBox spacing="10">
+                <Text styleClass="recipe-detail-section" text="Steps"/>
+                <TextFlow>
+                    <Text fx:id="stepsText" styleClass="recipe-detail-text"/>
+                </TextFlow>
+            </VBox>
+        </VBox>
+    </ScrollPane>
     
     <HBox spacing="10" alignment="CENTER">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
         <Button text="Close" onAction="#handleClose" styleClass="secondary-button"/>
-        <Region HBox.hgrow="ALWAYS"/> <!-- Spacer -->
     </HBox>
 </VBox>
