@@ -36,6 +36,8 @@
 .welcome-text {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
+    -fx-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 2, 0, 0, 1); /* Add shadow for better visibility */
 }
 
 .sidebar-button {

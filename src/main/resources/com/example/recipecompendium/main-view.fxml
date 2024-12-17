@@ -18,7 +18,12 @@
             <Insets top="20" right="10" bottom="20" left="10"/>
         </padding>
         
-        <Text fx:id="welcomeText" styleClass="welcome-text"/>
+        <StackPane>
+            <ImageView fitWidth="180" fitHeight="100" preserveRatio="true">
+                <Image url="@../../../images/banner.jpg"/>
+            </ImageView>
+            <Text fx:id="welcomeText" styleClass="welcome-text"/>
+        </StackPane>
         
         <Separator/>
         
