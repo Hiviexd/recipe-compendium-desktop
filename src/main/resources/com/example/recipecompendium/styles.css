@@ -1,0 +1,206 @@
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.form-container {
+    -fx-max-width: 300px;
+}
+
+.input-field {
+    -fx-pref-width: 200px;
+}
+
+.primary-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.secondary-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.message-label {
+    -fx-text-fill: red;
+}
+
+/* main page */
+
+.sidebar {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 0 1 0 0;
+}
+
+.welcome-text {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #212529;
+    -fx-padding: 8 12;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.sidebar-button .icon {
+    -fx-fit-width: 16;
+    -fx-fit-height: 16;
+    -fx-translate-x: -5;
+}
+
+.logout-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c82333;
+}
+
+.logout-icon {
+    -fx-icon-color: white;
+}
+
+.recipe-card {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 4px;
+    -fx-padding: 0;
+    -fx-pref-width: 250px;
+    -fx-max-height: 400px;
+}
+
+/* recipe card */
+.recipe-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.recipe-description {
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+    -fx-text-overrun: ellipsis;
+}
+
+.recipe-cuisine {
+    -fx-font-size: 12px;
+    -fx-fill: #666666;
+}
+
+.recipe-creator {
+    -fx-font-size: 12px;
+    -fx-fill: #666666;
+    -fx-font-style: italic;
+}
+
+.favorite-button {
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+    -fx-background-radius: 50%;
+}
+
+.favorite-button:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+
+.favorite-button:selected {
+    -fx-background-color: transparent;
+}
+
+.favorite-button:selected:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+
+.favorite-button .icon {
+    -fx-fit-width: 20;
+    -fx-fit-height: 20;
+}
+
+.edit-button {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+}
+
+.edit-button:hover {
+    -fx-background-color: #5a6268;
+}
+
+.recipe-card ImageView {
+    -fx-alignment: CENTER;
+}
+
+.recipe-detail-image {
+    -fx-alignment: CENTER;
+    -fx-background-color: #f8f9fa;
+}
+
+.recipe-card StackPane {
+    -fx-alignment: CENTER;
+    -fx-min-height: 150;
+    -fx-background-color: #f8f9fa;
+}
+
+.recipe-card ImageView {
+    -fx-fit-width: 250;
+    -fx-fit-height: 150;
+}
+
+/* recipe detail view */
+
+.recipe-detail-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.recipe-detail-cuisine {
+    -fx-font-size: 14px;
+    -fx-fill: #666666;
+}
+
+.recipe-detail-section {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.recipe-detail-text {
+    -fx-font-size: 14px;
+}
+
+/* Icon styles */
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+    -fx-background-radius: 50%;
+}
+
+.icon-button:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+
+.icon-button .icon {
+    -fx-fit-width: 20;
+    -fx-fit-height: 20;
+}
+
+.delete-icon {
+    -fx-icon-color: #dc3545;
+    -fx-icon-size: 18;
+}
+
+.edit-icon {
+    -fx-icon-color: #28a745;
+    -fx-icon-size: 18;
+}
+
+.favorite-icon {
+    -fx-icon-color: #ff69b4;
+    -fx-icon-size: 18;
+}

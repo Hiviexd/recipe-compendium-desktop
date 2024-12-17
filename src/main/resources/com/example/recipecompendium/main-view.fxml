@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.example.recipecompendium.controllers.MainController"
+      stylesheets="@styles.css">
+    
+    <!-- Left Sidebar -->
+    <VBox styleClass="sidebar" spacing="10" prefWidth="200">
+        <padding>
+            <Insets top="20" right="10" bottom="20" left="10"/>
+        </padding>
+        
+        <Text fx:id="welcomeText" styleClass="welcome-text"/>
+        
+        <Separator/>
+        
+        <Button text="Home" onAction="#handleHome" styleClass="sidebar-button" maxWidth="Infinity">
+            <graphic>
+                <FontIcon iconLiteral="fas-home" styleClass="icon"/>
+            </graphic>
+        </Button>
+        <Button text="Favorite Recipes" onAction="#handleFavorites" styleClass="sidebar-button" maxWidth="Infinity">
+            <graphic>
+                <FontIcon iconLiteral="fas-heart" styleClass="icon"/>
+            </graphic>
+        </Button>
+        <Button text="Your Recipes" onAction="#handleYourRecipes" styleClass="sidebar-button" maxWidth="Infinity">
+            <graphic>
+                <FontIcon iconLiteral="fas-user" styleClass="icon"/>
+            </graphic>
+        </Button>
+        <Button text="Create Recipe" onAction="#handleCreateRecipe" styleClass="sidebar-button" maxWidth="Infinity">
+            <graphic>
+                <FontIcon iconLiteral="fas-plus" styleClass="icon"/>
+            </graphic>
+        </Button>
+        
+        <Region VBox.vgrow="ALWAYS"/> <!-- Spacer -->
+        
+        <Button text="Logout" onAction="#handleLogout" styleClass="logout-button" maxWidth="Infinity">
+            <graphic>
+                <FontIcon iconLiteral="fas-sign-out-alt" styleClass="icon,logout-icon"/>
+            </graphic>
+        </Button>
+    </VBox>
+    
+    <!-- Main Content Area -->
+    <VBox HBox.hgrow="ALWAYS" spacing="10">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        
+        <!-- Search Bar -->
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="searchField" promptText="Search recipes..." HBox.hgrow="ALWAYS"/>
+            <Button text="Search" onAction="#handleSearch" styleClass="primary-button"/>
+        </HBox>
+        
+        <!-- Recipe Grid -->
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+            <FlowPane fx:id="recipeContainer" hgap="10" vgap="10"/>
+        </ScrollPane>
+    </VBox>
+</HBox>

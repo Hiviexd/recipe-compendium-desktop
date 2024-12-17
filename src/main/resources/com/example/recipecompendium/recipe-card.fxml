@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.example.recipecompendium.controllers.RecipeCardController"
+      styleClass="recipe-card" 
+      onMouseClicked="#handleCardClick"
+      maxHeight="400">
+    
+    <StackPane>
+        <ImageView fx:id="recipeImage" fitHeight="150" fitWidth="250" preserveRatio="true">
+            <Image url="@images/default-recipe.jpg"/>
+        </ImageView>
+        <VBox.margin>
+            <Insets bottom="5"/>
+        </VBox.margin>
+    </StackPane>
+    
+    <VBox spacing="5" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+        </padding>
+        
+        <!-- Content Area -->
+        <VBox spacing="5" VBox.vgrow="ALWAYS">
+            <Text fx:id="nameText" styleClass="recipe-name"/>
+            <Text fx:id="descriptionText" styleClass="recipe-description" wrappingWidth="230"/>
+            <Text fx:id="cuisineText" styleClass="recipe-cuisine"/>
+            <Text fx:id="creatorText" styleClass="recipe-creator"/>
+        </VBox>
+        
+        <!-- Button Area -->
+        <HBox spacing="5" alignment="BOTTOM_RIGHT">
+            <Button fx:id="editButton" 
+                    onAction="#handleEdit" 
+                    visible="false"
+                    styleClass="icon-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-pencil-alt" styleClass="edit-icon"/>
+                </graphic>
+            </Button>
+            <Button fx:id="deleteButton" 
+                    onAction="#handleDelete" 
+                    visible="false"
+                    styleClass="icon-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-trash-alt" styleClass="delete-icon"/>
+                </graphic>
+            </Button>
+            <ToggleButton fx:id="favoriteButton"
+                          onAction="#handleFavoriteToggle"
+                          styleClass="icon-button"/>
+        </HBox>
+    </VBox>
+</VBox>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.example.recipecompendium.controllers.RecipeEditController"
+      stylesheets="@styles.css"
+      spacing="15"
+      prefWidth="600">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Text fx:id="titleLabel" styleClass="recipe-detail-title"/>
+    
+    <GridPane vgap="10" hgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="100"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+        
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <Label text="Cuisine:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="cuisineField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextArea fx:id="descriptionArea" prefRowCount="3" wrapText="true"
+                  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+        <Label text="Ingredients:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextArea fx:id="ingredientsArea" prefRowCount="5" wrapText="true"
+                  GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        
+        <Label text="Steps:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextArea fx:id="stepsArea" prefRowCount="5" wrapText="true"
+                  GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        
+        <Label text="Image:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="imageUrlField" HBox.hgrow="ALWAYS"/>
+            <Button text="Browse" onAction="#handleImageBrowse"/>
+        </HBox>
+    </GridPane>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Save" onAction="#handleSave" styleClass="primary-button"/>
+        <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button"/>
+    </HBox>
+    
+    <Label fx:id="messageLabel" styleClass="message-label"/>
+</VBox>
