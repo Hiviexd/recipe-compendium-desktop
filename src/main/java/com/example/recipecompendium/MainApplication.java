@@ -12,7 +12,7 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1024, 550);
-        stage.setTitle("Recipe Compendium - Login");
+        stage.setTitle("Recipe Compendium");
         stage.setScene(scene);
         stage.show();
     }
