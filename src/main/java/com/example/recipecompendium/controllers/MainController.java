@@ -143,8 +143,8 @@ public class MainController {
                 Stage stage = (Stage) welcomeText.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setMaximized(false);
-                stage.setWidth(800);
-                stage.setHeight(600);
+                stage.setWidth(1024);
+                stage.setHeight(550);
             } catch (IOException e) {
                 DialogUtils.handleError.apply(e);
             }

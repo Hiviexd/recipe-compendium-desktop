@@ -37,8 +37,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
-# Exclude everything in images directory
+# Exclude everything in images directory except for default images
 src/main/resources/images/*
-
-# But keep default-recipe.jpg
 !src/main/resources/images/default-recipe.jpg
+!src/main/resources/images/login-banner.jpg
+!src/main/resources/images/signup-banner.jpg

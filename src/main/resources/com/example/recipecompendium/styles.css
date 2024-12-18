@@ -206,3 +206,37 @@
     -fx-icon-color: #ff69b4;
     -fx-icon-size: 18;
 }
+
+/* new login */
+
+.subtitle {
+    -fx-font-size: 14px;
+    -fx-fill: #868686;
+}
+
+.text-muted {
+    -fx-fill: #868686;
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4CAF50;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.link-button:hover {
+    -fx-underline: true;
+}
+
+.input-field {
+    -fx-background-radius: 0;
+    -fx-pref-width: 220;
+    -fx-pref-height: 30;
+}
+
+.primary-button {
+    -fx-background-radius: 0;
+    -fx-pref-height: 30;
+    -fx-font-weight: bold;
+}
